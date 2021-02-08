@@ -70,6 +70,25 @@ Your solution:
 
 ###### If we type in our console your function and next_binary_number([1,0,0,0,0,0,0,0,0,1]) then the result should look like 1,0,0,0,0,0,0,0,1,0 (or as an array).
 
+```javascript
+const next_binary_number = (input) => {
+    for (let counter = input.length - 1; counter >= 0; counter--) {
+        if (input[counter] === 0) {
+            input[counter] = 1
+            return input
+        } else if (input[counter] === 1 && counter !== 0) {
+            input[counter] = 0
+        } else if (input[counter] === 1 && counter === 0) {
+            input[counter] = 0
+            input.unshift(1)
+        }
+    }
+    return input
+}
+
+next_binary_number([1, 0, 0, 0, 0, 0, 0, 0, 0, 1])
+```
+
 ---
 
 If you get invited to the first interview read the "What to expect.md" file.
