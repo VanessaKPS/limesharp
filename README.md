@@ -40,6 +40,17 @@ Your solution:
 
 ###### If we type in our console your function and reformat("liMeSHArp DeveLoper TEST") then the result should be Lmshrp dvlpr tst
 
+```javascript
+const reformat = (input) => {
+    let sansVowels = input.replace(/[aeiou]/gi, '')
+    return `${sansVowels.charAt(0).toUpperCase()}${sansVowels
+        .substring(1)
+        .toLowerCase()}`
+}
+
+reformat('liMeSHarp Developer TEST')
+```
+
 ### Task 3 (optional, for bonus points):
 
 Make this work (without using any built in functions, only a `for` loop, return the next binary number in a string or as an array)
